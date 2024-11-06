@@ -1,0 +1,58 @@
+<div class="card widget-container" style="height: 300px; width: 48%">
+    <h5 class="card-header border-bottom w-100">Neurodiversities</h5>
+    <div class="card-body">
+        <div class="chart2 ms-2">
+            <canvas id="neurodiversityChart"></canvas>
+        </div>
+    </div>
+</div>
+<script>
+    const neuroCtx = document.getElementById('neurodiversityChart').getContext('2d');
+    const neurodiversities = {{ neurodiversities|json_encode|raw }};
+    const neuroLabels = Object.keys(neurodiversities);
+    const neuroValues = Object.values(neurodiversities);
+
+    new Chart(neuroCtx, {
+        type: 'doughnut',
+        data: {
+            labels: neuroLabels,
+            datasets: [{
+                data: neuroValues,
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(255, 159, 64, 0.6)',
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(201, 203, 207, 0.6)' // Add a color for 'None'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(201, 203, 207, 1)' // Add a border color for 'None'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'right'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const label = context.label || '';
+                            const value = context.raw || 0;
+                            return `${label}: ${Math.round(value)}`;
+                        }
+                    }
+                }
+            },
+        }
+    });
+</script>

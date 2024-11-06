@@ -1,0 +1,106 @@
+<div class="w-100 d-flex border-bottom">
+<nav class="header mx-auto d-flex flex-row justify-content-lg-between h-25 sticky-top" id="header">
+    <div id="left-side-header" class="ms-3 d-flex flex-row mt-3 justify-content-center">
+        <div class="dropdown">
+            <button class="btn btn-transparent dropdown-toggle outline-none mx-auto" type="button" data-bs-toggle="dropdown" id="btn1">
+                <i class="fa-solid fa-align-center"></i> Curriculum
+            </button>
+            <ul class="dropdown-menu" id="dropdown">
+                <li><a href="#" class="dropdown-item">Curriculum Index</a></li>
+                <li><a href="#" class="dropdown-item">New Programme</a></li>
+                <li><a href="#" class="dropdown-item">New Component</a></li>
+                <li><a href="#" class="dropdown-item">Training.gov.au</a></li>
+                <li><a href="#" class="dropdown-item border-top">Grading Schemes</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-transparent dropdown-toggle outline-none mx-auto" type="button" data-bs-toggle="dropdown" id="btn1">
+                <i class="fa-solid fa-user-secret"></i> Students
+            </button>
+            <ul class="dropdown-menu" id="dropdown">
+                <li><a href="#" class="dropdown-item">Student Index</a></li>
+                <li><a href="#" class="dropdown-item">New Student</a></li>
+                <li><a href="#" class="dropdown-item">Merge Students</a></li>
+                <li><a href="#" class="dropdown-item border">Form Submissions</a></li>
+                <li><a href="#" class="dropdown-item">Contacts</a></li>
+                <li><a href="#" class="dropdown-item">Organizations</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-transparent dropdown-toggle outline-none mx-auto" type="button" data-bs-toggle="dropdown" id="btn1">
+                <i class="fa-solid fa-user-group"></i> Cohorts
+            </button>
+            <ul class="dropdown-menu" id="dropdown">
+                <li><a href="#" class="dropdown-item">Intake Index</a></li>
+                <li><a href="#" class="dropdown-item">New Intake</a></li>
+                <li><a href="#" class="dropdown-item">Clone Intake</a></li>
+                <li><a href="#" class="dropdown-item border-top">Class Index</a></li>
+                <li><a href="#" class="dropdown-item">New Class</a></li>
+
+            </ul>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-transparent dropdown-toggle outline-none mx-auto" type="button" data-bs-toggle="dropdown" id="btn1">
+                <i class="fa-solid fa-graduation-cap"></i> Enrolments
+            </button>
+            <ul class="dropdown-menu" id="dropdown">
+                <li><a href="#" class="dropdown-item">Enrolment Index</a></li>
+                <li><a href="#" class="dropdown-item">Enrol Students</a></li>
+                <li><a href="#" class="dropdown-item border">Marking</a></li>
+                <li><a href="#" class="dropdown-item">Price Books</a></li>
+                <li><a href="#" class="dropdown-item">Invoices</a></li>
+
+            </ul>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-transparent dropdown-toggle outline-none mx-auto" type="button" data-bs-toggle="dropdown" id="btn1">
+                <i class="fa-solid fa-chart-line"></i> Reports
+            </button>
+            <ul class="dropdown-menu" id="dropdown">
+                <li><a href="#" class="dropdown-item">Enrolment Index</a></li>
+                <li><a href="#" class="dropdown-item">Enrol Students</a></li>
+                <li><a href="#" class="dropdown-item border">Marking</a></li>
+                <li><a href="#" class="dropdown-item">Price Books</a></li>
+                <li><a href="#" class="dropdown-item">Invoices</a></li>
+                <li><a href="{{ path('app_chart') }}" class="dropdown-item">Charts</a></li>
+
+            </ul>
+        </div>
+        <a href="{{ path('app_chart') }}" class="text-decoration-none" id="dashboard"><i class="fa-solid fa-ghost"></i> Dashboard</a>
+    </div>
+
+    <div id="right-side-header" class="me-3 mt-3 d-flex flex-row">
+        <input type="search" class="border-none" placeholder="Search Students...">
+        <a href="#" class="me-3"><i class="fa-solid fa-sun" style="color: #ffaa01;"></i></a>
+        <a href="#" class="me-3"><i class="fa-solid fa-globe" style="color: var(--header-text-color);"></i></a>
+        <a href="#" class="me-3"><i class="fa-solid fa-gear" style="color: var(--header-text-color);"></i></a>
+        <div class="dropdown">
+            <button class="btn btn-transparent dropdown-toggle outline-none mx-auto" type="button" data-bs-toggle="dropdown" id="btn2">
+                <i class="fa-solid fa-user-ninja" id="ninja-icon"></i>  Silvestre
+            </button>
+            <ul class="dropdown-menu" id="dropdown">
+                <li><a href="#" class="dropdown-item">Profile</a></li>
+                <li><a href="#" class="dropdown-item">My Calendar</a></li>
+                <li><a href="#" class="dropdown-item">Password/Security</a></li>
+                <li><a href="#" class="dropdown-item">User Manual</a></li>
+                <li><a href="#" class="dropdown-item">Support</a></li>
+                <li><a href="#" class="dropdown-item">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</div>
+
+
+
+
+
+{# <div class="header d-flex flex-row justify-content-lg-between h-25 sticky-top">
+    <div id="left-side-header" class="ms-3 d-flex flex-row mt-3">
+        <a href="{{ path('app_main') }}" class="text-decoration-none text-dark"><p>Home</p></a>
+        <a href="{{ path('app_chart') }}" class="text-decoration-none text-dark ms-3"><p>Dashboard <i class="fa-regular fa-face-smile"></i></p></a>
+    </div>
+    <div id="right-side-header" class="me-3 mt-3"><a href="{{ path('student_add') }}" class="text-decoration-none text-dark">Add a Student</a>
+    </div>
+</div>
+#}

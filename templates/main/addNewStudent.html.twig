@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add a new Student{% endblock %}
+
+{% block body %}
+{% include '/_partials/_header.html.twig' %}
+
+<div>
+    <h1 class="ms-2">Add Student</h1>
+    <form action="{{ path('student_add') }}" method="POST" class="ms-2">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control w-75" id="name" name="name" placeholder="John Doe" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control w-75" id="email" name="email" placeholder="john@doe.com" required>
+        </div>
+        <div class="mb-3">
+            <label for="date_of_birth" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control w-75" id="date_of_birth" name="date_of_birth" required>
+        </div>
+        <div class="mb-3">
+            <label for="phone_number" class="form-label">Phone Number</label>
+            <input type="text" class="form-control w-75" id="phone_number" name="phone_number"  placeholder="+64221234567" required>
+        </div>
+        <div class="mb-3">
+            <label for="learning_style" class="form-label">Learning Style</label>
+            <select type="text" class="form-control w-75" id="learning_style" name="learning_style">
+                <option value="Please select" disabled selected>Please Select</option>
+                <option value="None">None</option>
+                <option value="Visual">Visual</option>
+                <option value="Kinesthetic">Kinesthetic</option>
+                <option value="Logical">Logical</option>
+                <option value="Nature">Nature</option>
+                <option value="Solitary">Solitary</option>
+                <option value="Auditory">Auditory</option>
+                <option value="Read/Write">Read/Write</option>
+                <option value="Social">Social</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="neurodiversity" class="form-label">Neurodiversity</label>
+            <select type="text" class="form-control w-75" id="neurodiversity" name="neurodiversity">
+                <option value="Please select" disabled selected>Please select</option>
+                <option value="None">None</option>
+                <option value="Autism">Autism</option>
+                <option value="Dyslexia">Dyslexia</option>
+                <option value="Dyspraxia">Dyspraxia</option>
+                <option value="Dyscalculia">Dyscalculia</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Student</button>
+    </form>
+</div>
+
+{% include '/_partials/_footer.html.twig' %}
+{% endblock %}

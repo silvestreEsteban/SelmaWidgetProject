@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Student Information {% endblock %}
+
+{% block body %}
+{% include '/_partials/_header.html.twig' %}
+<div class="main-container">
+    <div id="main-content" class="mx-auto">
+
+        <table>
+
+            <caption>
+                Student Information 2024
+            </caption>
+           <thead>
+           <tr>
+               <th scope="col">Name</th>
+               <th scope="col">Student ID</th>
+               <th scope="col">Email</th>
+               <th scope="col">Learning Style(s)</th>
+               <th scope="col">Neurodiversity</th>
+           </tr>
+           </thead>
+            {% for student in students %}
+            <tbody>
+            <tr>
+                <th scope="row">{{ student.name }}</th>
+                <th scope="row">{{ student.id }}</th>
+                <th scope="row">{{ student.email }}</th>
+                <td>{{ student.learningStyle }}</td>
+                <td>{{ student.neurodiversity }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+
+
+
+    {% include '/_partials/_footer.html.twig' %}
+
+
+{% endblock %}

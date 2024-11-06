@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block body %}
+    {% include '/_partials/_header.html.twig' %}
+    <div class="main-container w-100 h-100">
+        <div class="d-flex flex-wrap justify-content-between mx-auto" style="width: 60%" id="main-container">
+            {% include '_partials/_myDashboardCard.html.twig' %}
+            {% include '_partials/_learningStyleChart.html.twig' %}
+            {% include '_partials/_neurodiversityChart.html.twig' %}
+        </div>
+    </div>
+    {% include '/_partials/_footer.html.twig' %}
+{% endblock %}

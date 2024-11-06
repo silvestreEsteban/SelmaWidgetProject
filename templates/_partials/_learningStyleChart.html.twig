@@ -1,0 +1,77 @@
+<div class="card widget-container" style="height: 400px; width: 48%;">
+    <h5 class="card-header border-bottom w-100">Learning Styles</h5>
+    <div class="card-body">
+        <div class="chart mb-2">
+            <canvas id="studentChart"></canvas>
+        </div>
+    </div>
+    <div class="card-footer">Find out more <a href="{{ path('app_display') }}" class="text-decoration-none link-txt-color">here</a></div>
+</div>
+<script>
+    const learningStyles = {{ learningStyles|json_encode|raw }};
+    const labels = Object.keys(learningStyles);
+    const values = Object.values(learningStyles);
+
+    const ctx = document.getElementById('studentChart').getContext('2d');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Learning Styles',
+                data: values,
+                backgroundColor: [
+                    'rgba(155, 199, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 56, 186, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(255, 159, 64, 0.6)',
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 95, 0.6)'
+                ],
+                borderColor: [
+                    'rgba(155, 199, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 56, 186, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 95, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const label = context.label || '';
+                            const value = context.raw || 0;
+                            return `${label}: ${Math.round(value)}`;
+                        }
+                    }
+                }
+            },
+            onResize: function(chart, size) {
+                const legend = chart.options.plugins.legend;
+                if (size.width < 600) {
+                    legend.display = false;
+                } else {
+                    legend.display = true;
+                }
+                chart.update();
+            }
+        }
+    });
+</script>

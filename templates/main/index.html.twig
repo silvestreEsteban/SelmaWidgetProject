@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block body %}
+{% include '/_partials/_header.html.twig' %}
+    <div style="width: 400px">
+        <canvas id="studentChart"></canvas>
+    </div>
+    <script>
+        const ctx = document.getElementById('studentChart');
+
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+{% include '/_partials/_footer.html.twig' %}
+{% endblock %}
