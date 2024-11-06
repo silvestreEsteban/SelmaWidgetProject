@@ -5,13 +5,14 @@
             <canvas id="neurodiversityChart"></canvas>
         </div>
     </div>
+    <div class="card-footer">Learn more about neurodiversities <a href="https://www.health.harvard.edu/blog/what-is-neurodiversity-202111232645" target="_blank" class="link-txt-color text-decoration-none">here</a></div>
 </div>
 <script>
     const neuroCtx = document.getElementById('neurodiversityChart').getContext('2d');
     const neurodiversities = {{ neurodiversities|json_encode|raw }};
     const neuroLabels = Object.keys(neurodiversities);
     const neuroValues = Object.values(neurodiversities);
-
+    delete neurodiversities['null'];
     new Chart(neuroCtx, {
         type: 'doughnut',
         data: {
@@ -23,14 +24,16 @@
                     'rgba(153, 102, 255, 0.6)',
                     'rgba(255, 159, 64, 0.6)',
                     'rgba(255, 99, 132, 0.6)',
-                    'rgba(201, 203, 207, 0.6)' // Add a color for 'None'
+                    'rgba(201, 203, 207, 0.6)',
+                    'rgba(35, 192, 82, 0.6)'
                 ],
                 borderColor: [
                     'rgba(75, 192, 192, 1)',
                     'rgba(153, 102, 255, 1)',
                     'rgba(255, 159, 64, 1)',
                     'rgba(255, 99, 132, 1)',
-                    'rgba(201, 203, 207, 1)' // Add a border color for 'None'
+                    'rgba(201, 203, 207, 1)',
+                    'rgba(35, 192, 82, 1)'
                 ],
                 borderWidth: 1
             }]

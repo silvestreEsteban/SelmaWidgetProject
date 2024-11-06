@@ -1,5 +1,5 @@
-<div class="w-100 d-flex border-bottom">
-<nav class="header mx-auto d-flex flex-row justify-content-lg-between h-25 sticky-top" id="header">
+<div class="w-100 d-flex border-bottom sticky-top" style="background-color: #fff;">
+<nav class="header mx-auto d-flex flex-row justify-content-lg-between h-25" id="header">
     <div id="left-side-header" class="ms-3 d-flex flex-row mt-3 justify-content-center">
         <div class="dropdown">
             <button class="btn btn-transparent dropdown-toggle outline-none mx-auto" type="button" data-bs-toggle="dropdown" id="btn1">
@@ -18,8 +18,8 @@
                 <i class="fa-solid fa-user-secret"></i> Students
             </button>
             <ul class="dropdown-menu" id="dropdown">
-                <li><a href="#" class="dropdown-item">Student Index</a></li>
-                <li><a href="#" class="dropdown-item">New Student</a></li>
+                <li><a href="{{ path('app_display') }}" class="dropdown-item">Student Index</a></li>
+                <li><a href="{{ path('student_add') }}" class="dropdown-item">New Student</a></li>
                 <li><a href="#" class="dropdown-item">Merge Students</a></li>
                 <li><a href="#" class="dropdown-item border">Form Submissions</a></li>
                 <li><a href="#" class="dropdown-item">Contacts</a></li>
@@ -90,17 +90,3 @@
     </div>
 </nav>
 </div>
-
-
-
-
-
-{# <div class="header d-flex flex-row justify-content-lg-between h-25 sticky-top">
-    <div id="left-side-header" class="ms-3 d-flex flex-row mt-3">
-        <a href="{{ path('app_main') }}" class="text-decoration-none text-dark"><p>Home</p></a>
-        <a href="{{ path('app_chart') }}" class="text-decoration-none text-dark ms-3"><p>Dashboard <i class="fa-regular fa-face-smile"></i></p></a>
-    </div>
-    <div id="right-side-header" class="me-3 mt-3"><a href="{{ path('student_add') }}" class="text-decoration-none text-dark">Add a Student</a>
-    </div>
-</div>
-#}

@@ -13,38 +13,39 @@ class ChartController extends AbstractController
     public function chart(StudentRepository $studentRepository): Response
     {
         $students = $studentRepository->findAll();
-        $learningStyles = [
-            'Visual' => 0,
-            'Logical' => 0,
-            'Solitary' => 0,
-            'Read/Write' => 0,
-            'Auditory' => 0,
-            'Kinesthetic' => 0,
-            'Nature' => 0,
-            'Social' => 0,
-        ];
+        $learningStyles = [];
 
         foreach ($students as $student) {
-            $styles = explode(', ', $student->getLearningStyle());
-            foreach ($styles as $style) {
-                $style = trim($style);
-                if (isset($learningStyles[$style])) {
-                    ++$learningStyles[$style];
+            if ($student) {
+                $styles = $student->getLearningStyle();
+                if ($styles) {
+                    $stylesArray = explode(', ', $styles);
+                    foreach ($stylesArray as $style) {
+                        $style = trim($style);
+                        if (!array_key_exists($style, $learningStyles)) {
+                            $learningStyles[$style] = 0;
+                        }
+                        ++$learningStyles[$style];
+                    }
                 }
             }
         }
 
-        $neurodiversities = [
-            'Autism' => 0,
-            'Dyslexia' => 0,
-            'Dyspraxia' => 0,
-            'Dyscalculia' => 0,
-        ];
+
+        $neurodiversities = [];
 
         foreach ($students as $student) {
             $neurodiversity = $student->getNeurodiversity();
-            if (array_key_exists($neurodiversity, $neurodiversities)) {
+            if ($neurodiversity) {
+                if (!array_key_exists($neurodiversity, $neurodiversities)) {
+                    $neurodiversities[$neurodiversity] = 0;
+                }
                 ++$neurodiversities[$neurodiversity];
+            } else {
+                if (!array_key_exists('None', $neurodiversities)) {
+                    $neurodiversities['None'] = 0;
+                }
+                ++$neurodiversities['None'];
             }
         }
 

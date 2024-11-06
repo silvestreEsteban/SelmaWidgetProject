@@ -14,15 +14,19 @@ class FetchNeurodiversityDataController extends AbstractController
             'Autism' => 0,
             'Dyslexia' => 0,
             'Dyspraxia' => 0,
-            'Dyscalculia' => 0,
+            'Test' => 0,
+            'None' => 0,
         ];
 
         foreach ($students as $student) {
             $neurodiversity = $student->getNeurodiversity();
             if (array_key_exists($neurodiversity, $neurodiversities)) {
                 ++$neurodiversities[$neurodiversity];
+            } else {
+                ++$neurodiversity['None'];
             }
         }
+
 
         return $this->render('_neurodiversityChart.html.twig', [
             'neurodiversities' => $neurodiversities,

@@ -3,7 +3,6 @@
     --selma-blue: #3abff5;
 }
 
-
 .main-container {
     min-height: 90vh;
     background-color: #f0ebe2;
@@ -165,6 +164,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     margin-top: 20px;
 }
 
+
 .card-header {
     font-size: 16px;
     font-family: Thonburi, serif;
@@ -179,7 +179,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 }
 
 .chart2 {
-    height: 80%;
+    width: 70%;
+    height: 85%;
     margin-right: 150px;
     margin-top: 15px;
 }
+
