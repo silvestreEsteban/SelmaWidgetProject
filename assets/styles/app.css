@@ -5,14 +5,9 @@
 
 .main-container {
     min-height: 90vh;
-    background-color: #f0ebe2;
+    background-color: #f6ebe6;
 }
 
-.widget-container {
-    width: 45%;
-    height: 45%;
-    background-color: #f8f6f8;
-}
 
 .title {
     border: 1px solid grey;
@@ -31,9 +26,8 @@
     width: 40%;
 }
 
-.header {
-    height: 30px;
-
+#header {
+    height: 40px;
 }
 
 .footer {
@@ -42,20 +36,20 @@
     background-color: #fff;
 }
 
-thead,
-tfoot {
-    background-color: #2c5e77;
-    color: #fff;
+tbody {
+    color: var(--header-text-color);
 }
 
-tbody {
-    background-color: #e4f0f5;
+#student-page-link {
+    color: var(--header-text-color);
+}
+
+#student-page-link:hover {
+    color: var(--selma-blue);
 }
 
 table {
-    border-collapse: collapse;
-    border: 2px solid rgb(140 140 140);
-    font-family: sans-serif;
+    font-family: Thonburi, sans-serif;
     font-size: 0.8rem;
     letter-spacing: 1px;
 }
@@ -68,16 +62,18 @@ caption {
 
 th,
 td {
-    border: 1px solid rgb(160 160 160);
+
     padding: 8px 10px;
 }
 
-td {
-    text-align: center;
+.fa-house {
+    margin-top: 12px;
+    margin-left: 8px;
+
 }
 
 #main-content {
-    width: 660px;
+    width: 70%;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -88,7 +84,7 @@ td {
     border: none;
 }
 
-#btn1:focus, #btn1:active, #btn1:focus-visible {
+#btn1:focus, #btn1:active, #btn1:focus-visible, #btn1:focus:not {
     outline: none !important;
     box-shadow: none !important;
     border: none !important;
@@ -97,15 +93,22 @@ td {
 #btn1 {
     color: var(--header-text-color);
     font-size: 12px;
-    margin-top: -20px;
+
+
+}
+
+.nav-link {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: -7px;
+
 }
 
 #btn2 {
     color: var(--header-text-color);
     font-size: 14px;
-    margin-top: -20px;
+    margin-top: -7px;
 }
-
 
 
 #btn1:hover {
@@ -130,7 +133,7 @@ td {
 }
 
 #right-side-header a {
-    margin-top: -7px;
+    margin-top: -8px;
     text-decoration: none;
 }
 
@@ -185,3 +188,35 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     margin-top: 15px;
 }
 
+#dashboard:hover {
+    color: var(--selma-blue);
+}
+
+#dashboard {
+    margin-top: -7px;
+    margin-left: 10px;
+}
+
+#dropdown {
+    border-radius: 2px;
+}
+
+#dropdown a {
+    height: 31px;
+    color: var(--header-text-color);
+}
+
+#dropdown a:hover {
+    background-color: #fff;
+    color: var(--selma-blue);
+}
+
+/* Student Information Individual Form */
+
+.button-for-student-ud {
+    color: black;
+}
+
+.button-for-student-ud:hover {
+    color: var(--selma-blue);
+}

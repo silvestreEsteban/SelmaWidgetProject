@@ -1,11 +1,11 @@
-<div class="card widget-container" style="height: 400px; width: 48%;">
+<div class="card mb-4" style="height: 400px; width: 48%;">
     <h5 class="card-header border-bottom w-100">Learning Styles</h5>
     <div class="card-body">
         <div class="chart mb-2">
             <canvas id="studentChart"></canvas>
         </div>
     </div>
-    <div class="card-footer">Find out more <a href="{{ path('app_display') }}" class="text-decoration-none link-txt-color">here</a></div>
+    <div class="card-footer">Find out more <a href="{{ path('displayAllStudents') }}" class="text-decoration-none link-txt-color">here</a></div>
 </div>
 <script>
     const learningStyles = {{ learningStyles|json_encode|raw }};

@@ -1,91 +1,92 @@
-<div class="w-100 d-flex border-bottom sticky-top" style="background-color: #fff;">
+<div class="w-100 d-flex border-bottom sticky-top" style="background-color: #fff; height: 40px">
+    <a href="/"><i class="fa-solid fa-house" style="color: var(--selma-blue)"></i></a>
 <nav class="header mx-auto d-flex flex-row justify-content-lg-between h-25" id="header">
     <div id="left-side-header" class="ms-3 d-flex flex-row mt-3 justify-content-center">
         <div class="dropdown">
-            <button class="btn btn-transparent dropdown-toggle outline-none mx-auto" type="button" data-bs-toggle="dropdown" id="btn1">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" id="btn1">
                 <i class="fa-solid fa-align-center"></i> Curriculum
-            </button>
-            <ul class="dropdown-menu" id="dropdown">
-                <li><a href="#" class="dropdown-item">Curriculum Index</a></li>
-                <li><a href="#" class="dropdown-item">New Programme</a></li>
-                <li><a href="#" class="dropdown-item">New Component</a></li>
-                <li><a href="#" class="dropdown-item">Training.gov.au</a></li>
-                <li><a href="#" class="dropdown-item border-top">Grading Schemes</a></li>
-            </ul>
+            </a>
+            <div class="dropdown-menu mt-2" id="dropdown">
+                <a href="#" class="dropdown-item" disabled>Curriculum Index</a>
+                <a href="#" class="dropdown-item" disabled>New Programme</a>
+                <a href="#" class="dropdown-item" disabled>New Component</a>
+                <a href="#" class="dropdown-item" disabled>Training.gov.au</a>
+                <a href="#" class="dropdown-item border-top" disabled>Grading Schemes</a>
+            </div>
         </div>
         <div class="dropdown">
-            <button class="btn btn-transparent dropdown-toggle outline-none mx-auto" type="button" data-bs-toggle="dropdown" id="btn1">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" id="btn1">
                 <i class="fa-solid fa-user-secret"></i> Students
-            </button>
-            <ul class="dropdown-menu" id="dropdown">
-                <li><a href="{{ path('app_display') }}" class="dropdown-item">Student Index</a></li>
-                <li><a href="{{ path('student_add') }}" class="dropdown-item">New Student</a></li>
-                <li><a href="#" class="dropdown-item">Merge Students</a></li>
-                <li><a href="#" class="dropdown-item border">Form Submissions</a></li>
-                <li><a href="#" class="dropdown-item">Contacts</a></li>
-                <li><a href="#" class="dropdown-item">Organizations</a></li>
-            </ul>
+            </a>
+            <div class="dropdown-menu mt-2" id="dropdown">
+                <a href="{{ path('displayAllStudents') }}" class="dropdown-item">Student Index</a>
+                <a href="{{ path('new_student') }}" class="dropdown-item">New Student</a>
+                <a href="#" class="dropdown-item" disabled>Merge Students</a>
+                <a href="#" class="dropdown-item border" disabled>Form Submissions</a>
+                <a href="#" class="dropdown-item" disabled>Contacts</a>
+                <a href="#" class="dropdown-item" disabled>Organizations</a>
+            </div>
         </div>
         <div class="dropdown">
-            <button class="btn btn-transparent dropdown-toggle outline-none mx-auto" type="button" data-bs-toggle="dropdown" id="btn1">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" id="btn1">
                 <i class="fa-solid fa-user-group"></i> Cohorts
-            </button>
-            <ul class="dropdown-menu" id="dropdown">
-                <li><a href="#" class="dropdown-item">Intake Index</a></li>
-                <li><a href="#" class="dropdown-item">New Intake</a></li>
-                <li><a href="#" class="dropdown-item">Clone Intake</a></li>
-                <li><a href="#" class="dropdown-item border-top">Class Index</a></li>
-                <li><a href="#" class="dropdown-item">New Class</a></li>
+            </a>
+            <div class="dropdown-menu mt-2" id="dropdown">
+                <a href="#" class="dropdown-item">Intake Index</a>
+                <a href="#" class="dropdown-item">New Intake</a>
+                <a href="#" class="dropdown-item">Clone Intake</a>
+                <a href="#" class="dropdown-item border-top">Class Index</a>
+                    <a href="#" class="dropdown-item">New Class</a>
 
-            </ul>
+            </div>
         </div>
         <div class="dropdown">
-            <button class="btn btn-transparent dropdown-toggle outline-none mx-auto" type="button" data-bs-toggle="dropdown" id="btn1">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" id="btn1">
                 <i class="fa-solid fa-graduation-cap"></i> Enrolments
-            </button>
-            <ul class="dropdown-menu" id="dropdown">
-                <li><a href="#" class="dropdown-item">Enrolment Index</a></li>
-                <li><a href="#" class="dropdown-item">Enrol Students</a></li>
-                <li><a href="#" class="dropdown-item border">Marking</a></li>
-                <li><a href="#" class="dropdown-item">Price Books</a></li>
-                <li><a href="#" class="dropdown-item">Invoices</a></li>
+            </a>
+            <div class="dropdown-menu mt-2" id="dropdown">
+                <a href="#" class="dropdown-item">Enrolment Index</a>
+                <a href="#" class="dropdown-item">Enrol Students</a>
+                <a href="#" class="dropdown-item border">Marking</a>
+                <a href="#" class="dropdown-item">Price Books</a>
+                <a href="#" class="dropdown-item">Invoices</a>
 
-            </ul>
+            </div>
         </div>
         <div class="dropdown">
-            <button class="btn btn-transparent dropdown-toggle outline-none mx-auto" type="button" data-bs-toggle="dropdown" id="btn1">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" id="btn1">
                 <i class="fa-solid fa-chart-line"></i> Reports
-            </button>
-            <ul class="dropdown-menu" id="dropdown">
-                <li><a href="#" class="dropdown-item">Enrolment Index</a></li>
-                <li><a href="#" class="dropdown-item">Enrol Students</a></li>
-                <li><a href="#" class="dropdown-item border">Marking</a></li>
-                <li><a href="#" class="dropdown-item">Price Books</a></li>
-                <li><a href="#" class="dropdown-item">Invoices</a></li>
-                <li><a href="{{ path('app_chart') }}" class="dropdown-item">Charts</a></li>
+            </a>
+            <div class="dropdown-menu mt-2" id="dropdown">
+                <a href="#" class="dropdown-item">Enrolment Index</a>
+                <a href="#" class="dropdown-item">Enrol Students</a>
+                <a href="#" class="dropdown-item border-top border-bottom">Marking</a>
+                <a href="#" class="dropdown-item">Price Books</a>
+                <a href="#" class="dropdown-item">Invoices</a>
+                <a href="{{ path('app_chart') }}" class="dropdown-item">Charts</a>
 
-            </ul>
+            </div>
         </div>
         <a href="{{ path('app_chart') }}" class="text-decoration-none" id="dashboard"><i class="fa-solid fa-ghost"></i> Dashboard</a>
     </div>
 
     <div id="right-side-header" class="me-3 mt-3 d-flex flex-row">
         <input type="search" class="border-none" placeholder="Search Students...">
-        <a href="#" class="me-3"><i class="fa-solid fa-sun" style="color: #ffaa01;"></i></a>
-        <a href="#" class="me-3"><i class="fa-solid fa-globe" style="color: var(--header-text-color);"></i></a>
-        <a href="#" class="me-3"><i class="fa-solid fa-gear" style="color: var(--header-text-color);"></i></a>
+        <a href="#" class="me-3 right-side-nav-icons"><i class="fa-solid fa-sun" style="color: #ffaa01;"></i></a>
+        <a href="#" class="me-3 right-side-nav-icons"><i class="fa-solid fa-globe" style="color: var(--header-text-color);"></i></a>
+        <a href="#" class="me-3 right-side-nav-icons" ><i class="fa-solid fa-gear" style="color: var(--header-text-color);"></i></a>
         <div class="dropdown">
-            <button class="btn btn-transparent dropdown-toggle outline-none mx-auto" type="button" data-bs-toggle="dropdown" id="btn2">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" id="btn2">
                 <i class="fa-solid fa-user-ninja" id="ninja-icon"></i>  Silvestre
-            </button>
-            <ul class="dropdown-menu" id="dropdown">
-                <li><a href="#" class="dropdown-item">Profile</a></li>
-                <li><a href="#" class="dropdown-item">My Calendar</a></li>
-                <li><a href="#" class="dropdown-item">Password/Security</a></li>
-                <li><a href="#" class="dropdown-item">User Manual</a></li>
-                <li><a href="#" class="dropdown-item">Support</a></li>
-                <li><a href="#" class="dropdown-item">Logout</a></li>
-            </ul>
+            </a>
+            <div class="dropdown-menu mt-2" id="dropdown">
+                <a href="#" class="dropdown-item">Profile</a>
+                <a href="#" class="dropdown-item">My Calendar</a>
+                <a href="#" class="dropdown-item">Password/Security</a>
+                <a href="#" class="dropdown-item">User Manual</a>
+                <a href="#" class="dropdown-item">Support</a>
+                <a href="#" class="dropdown-item">Logout</a>
+            </div>
         </div>
     </div>
 </nav>

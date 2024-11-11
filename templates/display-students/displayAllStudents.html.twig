@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Student Information {% endblock %}
+
+{% block body %}
+    {% include '/_partials/_header.html.twig' %}
+
+    <div class="main-container">
+        <div id="main-content" class="mx-auto">
+            <div class="card">
+                <div class="card-header">Student Index</div>
+                <div class="card-body">
+                    <table class="w-100">
+                        <thead>
+                        <tr class="border-bottom">
+                            <th scope="col">Name</th>
+                            <th scope="col">Student ID</th>
+                            <th scope="col">Preferred Name</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Learning Style(s)</th>
+                            <th scope="col">Neurodiversity</th>
+                            <th scope="col"></th>
+
+
+                        </tr>
+                        </thead>
+                        {% for student in students %}
+                        <tbody>
+                        <tr>
+                            <td>{{ student.name }}</td>
+                            <td>{{ student.id }}</td>
+                            <td>{{ student.preferredName }}</td>
+                            <td>{{ student.gender.gender }}</td>
+                            <td>{{ student.email }}</td>
+                            <td>{{ student.learningStyle.learningStyle ?? 'None'}}</td>
+                            <td>{{ student.neurodiversity.neurodiversity ?? 'None' }}</td>
+                            <td><a href="{{ path('display_student', {
+                                    id: student.id
+                                }) }}" class="text-decoration-none small" id="student-page-link">Student Page <i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+    {% include '/_partials/_footer.html.twig' %}
+
+
+{% endblock %}

@@ -4,35 +4,43 @@
 
 {% block body %}
 {% include '/_partials/_header.html.twig' %}
-<div class="main-container">
+
+    <div class="main-container">
     <div id="main-content" class="mx-auto">
+        <div class="card">
+            <div class="card-header">Student Index</div>
+            <div class="card-body">
+                <table>
+                    <thead>
+                    <tr class="border-bottom">
+                        <th scope="col">Name</th>
+                        <th scope="col">Student ID</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Learning Style(s)</th>
+                        <th scope="col">Neurodiversity</th>
+                        <th scope="col"></th>
 
-        <table>
 
-            <caption>
-                Student Information 2024
-            </caption>
-           <thead>
-           <tr>
-               <th scope="col">Name</th>
-               <th scope="col">Student ID</th>
-               <th scope="col">Email</th>
-               <th scope="col">Learning Style(s)</th>
-               <th scope="col">Neurodiversity</th>
-           </tr>
-           </thead>
-            {% for student in students %}
-            <tbody>
-            <tr>
-                <th scope="row">{{ student.name }}</th>
-                <th scope="row">{{ student.id }}</th>
-                <th scope="row">{{ student.email }}</th>
-                <td>{{ student.learningStyle }}</td>
-                <td>{{ student.neurodiversity }}</td>
-            </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+                    </tr>
+                    </thead>
+                    {% for student in students %}
+                    <tbody>
+                    <tr>
+                        <td>{{ student.name }}</td>
+                        <td>{{ student.id }}</td>
+                        <td>{{ student.email }}</td>
+                        <td>{{ student.learningStyle }}</td>
+                        <td>{{ student.neurodiversity }}</td>
+                        <td><a href="{{ path('display_student', {
+                                id: student.id
+                            }) }}" class="text-decoration-none small" id="student-page-link">Student Page <i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
 
 

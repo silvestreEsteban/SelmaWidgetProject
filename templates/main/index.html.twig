@@ -4,30 +4,19 @@
 
 {% block body %}
 {% include '/_partials/_header.html.twig' %}
-    <div style="width: 400px">
-        <canvas id="studentChart"></canvas>
-    </div>
-    <script>
-        const ctx = document.getElementById('studentChart');
-
-        new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
+   <div class="main-container w-100 h-100">
+       <div class="d-flex flex-wrap justify-content-between mx-auto" style="width: 80%">
+           <div class="card w-100">
+               <div class="card-header">Silvestre's SELMA Project</div>
+               <div class="card-body">
+                   <h5>The project I was tasked with was to create a widget for the SELMA V3 dashboard</h5>
+                   <p class="mt-3">This came with many challenges, the first being I had no prior experience with programming in PHP, and Symfony.</p>
+                   <p>I also had never thought about tertiary education from an administrative perspective - this was a new lens for me and I had to adjust accordingly.</p>
+               </div>
+               <div class="card-footer">Written in Symfony, utilizing JavaScript in the front-end where necessary</div>
+           </div>
+       </div>
+   </div>
 {% include '/_partials/_footer.html.twig' %}
 {% endblock %}
+

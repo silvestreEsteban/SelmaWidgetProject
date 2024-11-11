@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+{% block title %}Student Information | {{ student.name }}{% endblock %}
+{% block body %}
+    {% include '/_partials/_header.html.twig' %}
+
+    <div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Delete Student</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this student?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <form action="" method="POST" id="deleteForm">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <a href="{{ path('app_delete_student', {id :student.id}) }}" class="btn btn-danger" id="confirmDeleteButton">Yes</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="d-flex flex-wrap justify-content-between mx-auto" style="width: 80%">
+            <div class="card w-75 mx-auto">
+                <div class="card-header">Student Information</div>
+                <div class="card-body">
+                    <p><strong>Name:</strong> {{ student.name }}</p>
+                    <p><strong>Email:</strong> {{ student.email }}</p>
+                    <p><strong>Phone Number:</strong> {{ student.phoneNumber }}</p>
+                    <p><strong>Date of Birth:</strong> {{ student.dateOfBirth|date('Y-m-d') }}</p>
+                    <p><strong>Learning Style:</strong> {{ student.learningStyle.learningStyle ?? null }}</p>
+                    <p><strong>Neurodiversity:</strong> {{ student.neurodiversity.neurodiversity ?? null }}</p>
+                    <br>
+                    <div class="d-flex flex-row">
+                        <a href="{{ path('student_update', { id: student.id }) }}" class="text-decoration-none button-for-student-ud">Update</a>
+                        <a role="button" data-bs-toggle="modal" data-bs-target="#deleteModal" data-student-id="{{ student.id }}" class="text-decoration-none button-for-student-ud ms-4">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const deleteButtons = document.querySelectorAll('[data-bs-toggle="modal"][data-student-id]');
+            const deleteForm = document.getElementById('deleteForm');
+            const confirmDeleteButton = document.getElementById('confirmDeleteButton');
+
+            deleteButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    const studentId = this.getAttribute('data-student-id');
+                    deleteForm.action = '/display/student/' + studentId + '/delete';
+                });
+            });
+
+            confirmDeleteButton.addEventListener('click', function () {
+                deleteForm.submit();
+            });
+        });
+    </script>
+    {% include '/_partials/_footer.html.twig' %}
+{% endblock %}
