@@ -1,26 +1,26 @@
-<div class="card" style="height: 300px; width: 48%;">
+<div class="card mx-auto" style="height: 300px; width: 80%;">
     <h5 class="card-header border-bottom w-100">Neurodiversities</h5>
     <div class="card-body">
-        <div class="chart2 ms-5">
-            <canvas id="neurodiversityChart1"></canvas>
+        <div class="phone-chart mt-3">
+            <canvas id="phoneNeurodiversityChart"></canvas>
         </div>
     </div>
     <div class="card-footer">Learn more about neurodiversities <a href="https://www.health.harvard.edu/blog/what-is-neurodiversity-202111232645" target="_blank" class="link-txt-color text-decoration-none">here</a></div>
 </div>
 
-
 <script>
-    const neuroCtx = document.getElementById('neurodiversityChart1').getContext('2d');
-    const neurodiversities = {{ neurodiversities|json_encode|raw }};
-    const neuroLabels = Object.keys(neurodiversities);
-    const neuroValues = Object.values(neurodiversities);
-    delete neurodiversities['null'];
-    new Chart(neuroCtx, {
+    const neuroCtxPhone = document.getElementById('phoneNeurodiversityChart').getContext('2d');
+    const neurodiversityInfo = {{ neurodiversities|json_encode|raw }};
+    const neurodiversityLabels = Object.keys(neurodiversityInfo);
+    const neurodiversityValues = Object.values(neurodiversityInfo);
+    delete neurodiversityInfo['null'];
+
+    new Chart(neuroCtxPhone, {
         type: 'doughnut',
         data: {
-            labels: neuroLabels,
+            labels: neurodiversityLabels,
             datasets: [{
-                data: neuroValues,
+                data: neurodiversityValues,
                 backgroundColor: [
                     'rgba(75, 192, 192, 0.6)',
                     'rgba(153, 102, 255, 0.6)',
@@ -50,7 +50,7 @@
                 },
                 tooltip: {
                     callbacks: {
-                        label: function(context) {
+                        label: function (context) {
                             const label = context.label || '';
                             const value = context.raw || 0;
                             return `${label}: ${Math.round(value)}`;

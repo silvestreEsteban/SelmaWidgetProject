@@ -1,8 +1,8 @@
-<div class="card" style="width: 48%; height: 20%">
+<div class="card mx-auto mb-3" style="width: 80%; height: 20%">
     <div class="card-header">Annual Revenue Comparison</div>
     <div class="card-body w-100">
         <div>
-            <canvas id="invoiceChart"></canvas>
+            <canvas id="phoneInvoiceChart"></canvas>
         </div>
     </div>
 </div>
@@ -28,7 +28,7 @@
                 }]
         };
 
-        const ctx = document.getElementById('invoiceChart').getContext('2d');
+        const ctx = document.getElementById('phoneInvoiceChart').getContext('2d');
 
         const config = {
             type: 'line',

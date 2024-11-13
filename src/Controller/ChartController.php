@@ -13,8 +13,19 @@ class ChartController extends AbstractController
     public function chart(StudentInfoRepository $studentInfoRepository): Response
     {
         $students = $studentInfoRepository->findAll();
-        $learningStyles = [];
         $neurodiversities = [];
+        $learningStyles = [];
+        $paymentStatus = [];
+
+        foreach ($students as $student) {
+            $status = $student->getPaymentStatus();
+            if ($status) {
+                $payStatus = $status->getPaymentStatus();
+                if (!array_key_exists($payStatus, $paymentStatus)) {
+                    $paymentStatus[$payStatus] = 0;
+                } ++$paymentStatus[$payStatus];
+            }
+        }
 
         foreach ($students as $student) {
             $learningStyle = $student->getLearningStyle();
@@ -48,6 +59,8 @@ class ChartController extends AbstractController
         return $this->render('chart.html.twig', [
             'learningStyles' => $learningStyles,
             'neurodiversities' => $neurodiversities,
+            'students' => $students,
+            'paymentStatus' => $paymentStatus,
         ]);
     }
 }

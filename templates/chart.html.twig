@@ -5,13 +5,25 @@
 {% block body %}
     {% include '/_partials/_header.html.twig' %}
     <div class="main-container w-100 h-100">
-        <div class="d-flex flex-wrap flex-row justify-content-between mx-auto" style="width: 60%">
+        <div class="d-flex flex-wrap flex-row justify-content-between mx-auto d-lg-flex d-none" style="width: 60%">
             {% include '_partials/_myDashboardCard.html.twig' %}
             {% include '_charts/_neurodiversityChart.html.twig' %}
             {% include '_partials/_invoiceCard.html.twig' %}
             {% include '_charts/_learningStyleChart.html.twig' %}
             {% include '_charts/_annualRevenueComparison.html.twig' %}
         </div>
+
+        {# Phone Screen Div #}
+        <div class="d-flex flex-wrap flex-column justify-content-between mx-auto d-block d-sm-none">
+            {% include '_phoneCharts/_phoneDashboardChart.html.twig' %}
+            {% include '_phoneCharts/_phoneNeuroChart.html.twig' %}
+            {% include '_phoneCharts/_phoneLearnStyleChart.html.twig' %}
+            {% include '_phoneCharts/_phoneInvoiceChart.html.twig' %}
+            {% include '_phoneCharts/_phoneRevenueCompChart.html.twig' %}
+        </div>
     </div>
+
+
+
     {% include '/_partials/_footer.html.twig' %}
 {% endblock %}

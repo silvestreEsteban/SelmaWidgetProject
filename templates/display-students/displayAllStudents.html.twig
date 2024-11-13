@@ -7,7 +7,8 @@
 
     <div class="main-container">
         <div id="main-content" class="mx-auto">
-            <div class="card">
+            {#    Computer Screen Size        #}
+            <div class="card d-lg-flex d-none">
                 <div class="card-header">Student Index</div>
                 <div class="card-body">
                     <table class="w-100">
@@ -47,7 +48,35 @@
             </div>
 
 
+            {# Phone Screen #}
+            <div class="card d-block d-sm-none">
+                <div class="card-header">Student Index</div>
+                <div class="card-body">
+                    <table class="w-100">
+                        <thead>
+                        <tr class="border-bottom">
+                            <th scope="col">Name</th>
+                            <th scope="col">Student ID</th>
+                            <th scope="col"></th>
 
+
+                        </tr>
+                        </thead>
+                        {% for student in students %}
+                        <tbody>
+                        <tr>
+                            <td>{{ student.name }}</td>
+                            <td>{{ student.id }}</td>
+                            <td><a href="{{ path('display_student', {
+                                    id: student.id
+                                }) }}" class="text-decoration-none small" id="student-page-link">Student Page <i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
 
 

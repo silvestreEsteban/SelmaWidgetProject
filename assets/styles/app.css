@@ -93,8 +93,6 @@ td {
 #btn1 {
     color: var(--header-text-color);
     font-size: 12px;
-
-
 }
 
 .nav-link {
@@ -219,4 +217,59 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 .button-for-student-ud:hover {
     color: var(--selma-blue);
+}
+
+.link-txt-color:hover {
+    color: #367de3;
+}
+
+.yellow {
+    color: #ffaa01;
+}
+
+.purple {
+    color: #cb1dcb;
+}
+
+.user-div {
+    margin-left: -20px;
+}
+
+.user-div p {
+    margin-top: -10px;
+}
+
+.invoice-card-span {
+    border: 1px solid #ece9e9;
+    width: 32%;
+    height: 80%;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+.invoice-card-span:hover {
+    cursor: pointer;
+    background-color: #eee6e6;
+}
+
+.invoice-info-div p {
+    margin-top: -10px;
+}
+
+/* Media Queries */
+
+#small-screen-dropdown:focus, #small-screen-dropdown:active, #small-screen-dropdown:focus-visible, #small-screen-dropdown:focus:not {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+#small-screen-dropdown {
+    color: var(--header-text-color);
+    font-size: 22px;
+    margin-top: 2px;
+}
+
+.phone-chart {
+    height: 80%;
 }

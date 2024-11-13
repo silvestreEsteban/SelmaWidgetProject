@@ -1,4 +1,19 @@
-<div class="w-100 d-flex border-bottom sticky-top" style="background-color: #fff; height: 40px">
+<div class="d-block d-sm-none sticky-top border-bottom" id="small-screen-header" style="background-color: #fff; height: 40px; width: 430px;">
+    <div class="dropdown">
+        <a href="#" class="nav-link" role="button" data-bs-toggle="dropdown" id="small-screen-dropdown">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+        <div class="dropdown-menu mt-1" id="dropdown">
+            <a href="{{ path('app_main') }}" class="dropdown-item" disabled>Homepage</a>
+            <a href="{{ path('displayAllStudents') }}" class="dropdown-item" disabled>Student Index</a>
+            <a href="{{ path('new_student') }}" class="dropdown-item" disabled>New Student</a>
+            <a href="{{ path('app_chart') }}" class="dropdown-item" disabled>Dashboard</a>
+            <a href="#" class="dropdown-item border-top" disabled>Grading Schemes</a>
+        </div>
+    </div>
+</div>
+
+<div class="w-100 d-flex border-bottom sticky-top d-lg-flex d-none" id="header-container" style="background-color: #fff; height: 40px">
     <a href="/"><i class="fa-solid fa-house" style="color: var(--selma-blue)"></i></a>
 <nav class="header mx-auto d-flex flex-row justify-content-lg-between h-25" id="header">
     <div id="left-side-header" class="ms-3 d-flex flex-row mt-3 justify-content-center">
