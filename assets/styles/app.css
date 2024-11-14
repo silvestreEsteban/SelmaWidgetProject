@@ -3,6 +3,11 @@
     --selma-blue: #3abff5;
 }
 
+body {
+    background-color: #f6ebe6 !important;
+}
+
+
 .main-container {
     min-height: 90vh;
     background-color: #f6ebe6;
@@ -240,16 +245,15 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 }
 
 .invoice-card-span {
-    border: 1px solid #ece9e9;
     width: 32%;
     height: 80%;
-    background-color: #f8f8f8;
-    border-radius: 8px;
 }
 
 .invoice-card-span:hover {
     cursor: pointer;
-    background-color: #eee6e6;
+    background-color: #f8f8f8;
+    border: 1px solid #ece9e9;
+    border-radius: 8px;
 }
 
 .invoice-info-div p {
@@ -272,4 +276,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 .phone-chart {
     height: 80%;
+}
+
+#phoneRevenueChart {
+    height: 100% !important;
+
 }

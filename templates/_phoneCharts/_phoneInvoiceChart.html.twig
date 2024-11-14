@@ -1,7 +1,41 @@
 <div class="card mx-auto mb-2" style="width: 80%;">
     <div class="card-header">Payment by Status</div>
     <div class="card-body">
-        Chart goes here
+        <div class="d-flex flex-row justify-content-between mt-3 ms-4" style="width: 80%; height: 50%;">
+            <a href="#" class="text-decoration-none invoice-card-span">
+            <span class="d-flex flex-column">
+                <i class="fa-solid fa-pencil text-center fa-2x mt-1" style="color: var(--selma-blue);"></i>
+                <p class="text-center" style="color: var(--header-text-color); font-size: small;">
+                    Drafts ({{ paymentStatus['Draft'] }})
+                </p>
+            </span>
+            </a>
+
+            <a href="#" class="text-decoration-none invoice-card-span">
+                <span class="d-flex flex-column">
+                <i class="fa-solid fa-file-invoice text-center fa-2x mt-1" style="color: lightgreen;"></i>
+                <p class="text-center" style="color: var(--header-text-color); font-size: small;">
+                    Invoiced ({{ paymentStatus['Invoiced'] }})
+                </p>
+            </span>
+            </a>
+
+            <a href="#" class="text-decoration-none invoice-card-span">
+            <span class="d-flex flex-column">
+                <i class="fa-solid fa-circle-exclamation fa-2x text-danger text-center mt-1"></i>
+                <p class="text-center" style="color: var(--header-text-color); font-size: small;">
+                    Overdue ({{ paymentStatus['Overdue'] }})
+                </p>
+            </span>
+            </a>
+        </div>
+        <div class="d-flex flex-row flex-wrap invoice-info-div ms-5 mt-3" style="height: 40%; font-size: 14px;">
+            <p style="width: 50%"><strong>Students:</strong> {{ students|length }}</p>
+            <p style="width: 50%"><strong style="color: var(--selma-blue)">Drafts:</strong> {{ paymentStatus['Draft'] }}</p>
+            <p style="width: 50%"><strong style="color: lightgreen;">Invoiced:</strong> {{ paymentStatus['Invoiced'] }}</p>
+            <p style="width: 50%"><strong class="text-danger">Overdue:</strong> {{ paymentStatus['Overdue'] }}</p>
+        </div>
     </div>
     <div class="card-footer">See more invoice information <a href="#" class="link-txt-color text-decoration-none">here</a></div>
+    </div>
 </div>
