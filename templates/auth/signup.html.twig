@@ -4,13 +4,44 @@
 
 {% block body %}
 
-    <nav style="height: 40px; background-color: #fff;"></nav>
-    <div class="main-container w-100 h-100">
+    <nav class="nav fixed-top border-bottom" style="height: 40px; background-color: #fff; margin: 0;"></nav>
+    <div class="main-container w-100 d-flex justify-content-center" style="height: 96vh;">
+        <div class="d-flex flex-wrap justify-content-between mx-auto" style="width: 70%">
+            <div class="card w-100 mb-4 mx-auto align-self-center" style="height: 45%;">
+                <div class="card-header">Create an Account</div>
+                    <div class="card-body">
+                        <div class="d-flex flex-column">
+                            {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+                            {{ form_errors(form) }}
 
-        <div class="mx-auto" style="background-color: #fff; border-radius: 4px; width: 50%; height: 50%; margin-top: 200px;">
+                            <div class="mb-4">
+                                {{ form_label(form.email, null, { 'attr': {'class': 'form-label'}}) }}
+                                {{ form_widget(form.email, { 'attr': {'class': 'form-control'}}) }}
+                                {{ form_errors(form.email) }}
+                            </div>
 
+                            <div class="mb-4">
+                                {{ form_label(form.password.first, null, { 'attr': {'class': 'form-label'}}) }}
+                                {{ form_widget(form.password.first, { 'attr': {'class': 'form-control'}}) }}
+                                {{ form_errors(form.password.first) }}
+                            </div>
+
+                            <div class="mb-4">
+                                {{ form_label(form.password.second, null, { 'attr': {'class': 'form-label'}}) }}
+                                {{ form_widget(form.password.second, { 'attr': {'class': 'form-control'}}) }}
+                                {{ form_errors(form.password.second) }}
+                            </div>
+                            <div class="mb-4">
+                                {{ form_row(form.submit, {'attr': {'class': 'btn form-submit-btn', 'style': 'background-color: var(--selma-blue); color: white;'}}) }}
+                                {{ form_rest(form) }}
+                            </div>
+                            <p class="mt-1">Already have an account? <a href="{{ path('login') }}" class="text-decoration-underline" style="color: var(--selma-blue);">Log in</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
-
+{% include '/_partials/_footer.html.twig' %}
 {% endblock %}

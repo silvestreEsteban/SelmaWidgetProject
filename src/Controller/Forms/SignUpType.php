@@ -2,6 +2,7 @@
 
 namespace App\Controller\Forms;
 
+use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -18,21 +19,23 @@ class SignUpType extends AbstractType
             ->add('email', EmailType::class, [
                 'label' => 'Email',
                 'required' => true,
+                'invalid_message' => 'email is taken',
             ])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
+                'invalid_message' => 'The password fields must match.',
+                'options' => ['attr' => ['class' => 'password-field']],
+                'required' => true,
                 'first_options' => ['label' => 'Password'],
                 'second_options' => ['label' => 'Repeat Password'],
-                'invalid_message' => 'The password fields must match.',
-                'required' => true,
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Sign Up',
             ]);
     }
 
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults([]);
+        $resolver->setDefaults(['user_data' => User::class]);
     }
 }
