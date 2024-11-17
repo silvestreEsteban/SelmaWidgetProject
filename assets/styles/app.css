@@ -7,7 +7,6 @@ body {
     background-color: #f6ebe6 !important;
 }
 
-
 .main-container {
     min-height: 90vh;
     background-color: #f6ebe6;
@@ -280,5 +279,17 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 #phoneRevenueChart {
     height: 100% !important;
+    margin-left: -30px;
+}
 
+/*SIGN UP FORM*/
+
+#email-signup li {
+    background-color: #f36565;
+    padding: 5px;
+    width: 18%;
+    list-style-type: none;
+    border-radius: 4px;
+    margin-left: -30px;
+    margin-top: 10px;
 }

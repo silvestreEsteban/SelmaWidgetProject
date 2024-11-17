@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Controller\Forms;
+namespace App\Controller\Auth;
 
+use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -27,6 +28,6 @@ class AuthType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults([]);
+        $resolver->setDefaults(['data_class' => User::class]);
     }
 }

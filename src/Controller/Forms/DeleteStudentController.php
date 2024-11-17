@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Forms;
 
 use App\Entity\StudentInfo;
 use App\Repository\StudentInfoRepository;

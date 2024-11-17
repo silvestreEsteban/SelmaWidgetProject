@@ -36,6 +36,6 @@ class SignUpType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults(['user_data' => User::class]);
+        $resolver->setDefaults(['data_class' => User::class]);
     }
 }

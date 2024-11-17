@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\NewControllers;
+namespace App\Controller\DisplayDataControllers;
 
 use App\Repository\StudentInfoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

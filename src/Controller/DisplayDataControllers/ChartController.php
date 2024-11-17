@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\DisplayDataControllers;
 
 use App\Repository\AnnualRevenueRepository;
 use App\Repository\StudentInfoRepository;
@@ -88,7 +88,7 @@ class ChartController extends AbstractController
             }
         }
 
-        
+
 
         return $this->render('chart.html.twig', [
             'learningStyles' => $learningStyles,
