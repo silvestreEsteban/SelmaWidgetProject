@@ -92,7 +92,37 @@
             <input type="search" class="border-none" placeholder="Search Students...">
             <a href="#" class="me-3 right-side-nav-icons"><i class="fa-solid fa-sun" style="color: #ffaa01;"></i></a>
             <a href="#" class="me-3 right-side-nav-icons"><i class="fa-solid fa-globe" style="color: var(--header-text-color);"></i></a>
-            <a href="#" class="me-3 right-side-nav-icons" ><i class="fa-solid fa-gear" style="color: var(--header-text-color);"></i></a>
+            <a href="#" class="me-3 right-side-nav-icons" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas"><i class="fa-solid fa-gear" style="color: var(--header-text-color);"></i></a>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="menuOffcanvas">
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title">Settings</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="list-group list-group-flush" style="width: 90%; font-size: 14px; font-family: Poppins, serif;">
+                        <a href="#" class="list-group-item border-0">Account</a>
+                        <a href="#" class="list-group-item border-0">Campus Index</a>
+                        <hr class="my-2">
+                        <a href="#" class="list-group-item border-0">Communication</a>
+                        <a href="#" class="list-group-item border-0">Timetable/Attendance</a>
+                        <a href="#" class="list-group-item border-0">Lookup Data</a>
+                        <a href="#" class="list-group-item border-0">Custom Fields</a>
+                        <a href="#" class="list-group-item border-0">Tag Manager</a>
+                        <a href="#" class="list-group-item border-0">Validation Manager</a>
+                        <a href="#" class="list-group-item border-0">Form Manager</a>
+                        <a href="#" class="list-group-item border-0">Integrations</a>
+                        <a href="#" class="list-group-item border-0">Scheduler</a>
+                        <a href="#" class="list-group-item border-0">Compliance</a>
+                        <hr class="my-2">
+                        <a href="#" class="list-group-item border-0">System Users</a>
+                        <a href="{{ path('admin_users_list') }}" class="list-group-item border-0">Roles and Permissions</a>
+                        <hr class="my-2">
+                        <a href="#" class="list-group-item border-0">API</a>
+                    </div>
+                </div>
+            </div>
+
             <div class="dropdown">
                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" id="btn2">
                     <i class="fa-solid fa-user-ninja" id="ninja-icon"></i>  Silvestre

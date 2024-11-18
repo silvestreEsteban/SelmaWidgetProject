@@ -4,26 +4,32 @@
 
 {% block body %}
     {% include '/_partials/_header.html.twig' %}
-    <div class="main-container w-100 h-100">
-        <div class="d-flex flex-wrap flex-row justify-content-between mx-auto d-md-flex d-none" style="width: 60%">
+    <div class="main-container w-100" style="height: 100vh;">
+        {# Desktop/Tablet View #}
+        <div class="d-flex flex-wrap flex-row justify-content-between mx-auto d-md-flex d-none" style="width: 60%; gap: 1rem;">
             {% include '_partials/_myDashboardCard.html.twig' %}
             {% include '_charts/_neurodiversityChart.html.twig' %}
-            {% include '_partials/_invoiceCard.html.twig' %}
+            {% if 'ROLE_REGISTRAR' in app.user.roles or 'ROLE_ADMIN' in app.user.roles %}
+                {% include '_partials/_invoiceCard.html.twig' %}
+            {% endif %}
             {% include '_charts/_learningStyleChart.html.twig' %}
-            {% include '_charts/_annualRevenueComparison.html.twig' %}
+            {% if 'ROLE_REGISTRAR' in app.user.roles or 'ROLE_ADMIN' in app.user.roles %}
+                {% include '_charts/_annualRevenueComparison.html.twig' %}
+            {% endif %}
         </div>
 
-        {# Phone Screen Div #}
-        <div class="d-flex flex-wrap flex-column justify-content-between mx-auto d-block d-sm-none h-100">
-            {% include '_phoneCharts/_phoneDashboardChart.html.twig' %}
-            {% include '_phoneCharts/_phoneNeuroChart.html.twig' %}
-            {% include '_phoneCharts/_phoneLearnStyleChart.html.twig' %}
-            {% include '_phoneCharts/_phoneRevenueCompChart.html.twig' %}
-            {% include '_phoneCharts/_phoneInvoiceChart.html.twig' %}
+
+        {# Phone Screen View #}
+        <div class="d-flex flex-column mx-auto d-block d-sm-none h-100" style="gap: 1rem;">
+            <div class="flex-fill">{% include '_phoneCharts/_phoneDashboardChart.html.twig' %}</div>
+            <div class="flex-fill">{% include '_phoneCharts/_phoneNeuroChart.html.twig' %}</div>
+            <div class="flex-fill">{% include '_phoneCharts/_phoneLearnStyleChart.html.twig' %}</div>
+            {% if 'ROLE_REGISTRAR' in app.user.roles or 'ROLE_ADMIN' in app.user.roles %}
+                <div class="flex-fill">{% include '_phoneCharts/_phoneRevenueCompChart.html.twig' %}</div>
+                <div class="flex-fill">{% include '_phoneCharts/_phoneInvoiceChart.html.twig' %}</div>
+            {% endif %}
         </div>
     </div>
 
 
-
-    {% include '/_partials/_footer.html.twig' %}
 {% endblock %}

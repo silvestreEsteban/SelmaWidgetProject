@@ -16,6 +16,8 @@ class UpdateStudentController extends AbstractController
     #[Route('/update/student/{id<\d+>}', name: 'update_student')]
     public function new(int $id, Request $request, EntityManagerInterface $entityManager, StudentInfoRepository $studentInfoRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_TEACHER');
+
         $student = $entityManager->getRepository(StudentInfo::class)->find($id);
         if (!$student) {
             throw $this->createNotFoundException('Student not found');

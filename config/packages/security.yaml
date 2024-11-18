@@ -25,4 +25,11 @@ security:
     access_control:
         - { path: ^/login$, roles: PUBLIC_ACCESS }
         - { path: ^/signup$, roles: PUBLIC_ACCESS }
-        # - { path: ^/, roles: ROLE_USER }
+#        Protected Routes
+        - { path: ^/, roles: ROLE_USER }
+
+    role_hierarchy:
+        ROLE_REGISTRAR: [ ROLE_ADMIN, ROLE_TEACHER, ROLE_TUTOR, ROLE_USER ]
+        ROLE_ADMIN: [ ROLE_TEACHER, ROLE_TUTOR, ROLE_USER ]
+        ROLE_TEACHER: [ ROLE_TUTOR, ROLE_USER ]
+        ROLE_TUTOR: [ ROLE_USER ]
