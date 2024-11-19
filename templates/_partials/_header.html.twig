@@ -9,9 +9,19 @@
                 <a href="{{ path('displayAllStudents') }}" class="dropdown-item" disabled>Student Index</a>
                 <a href="{{ path('new_student') }}" class="dropdown-item" disabled>New Student</a>
                 <a href="{{ path('app_chart') }}" class="dropdown-item" disabled>Dashboard</a>
-                <a href="#" class="dropdown-item border-top" disabled>Grading Schemes</a>
+                <a href="{{ path('app_logout') }}" class="dropdown-item border-top" disabled>Logout</a>
             </div>
         </div>
+    {% else %}
+    <div class="dropdown">
+        <a href="#" class="nav-link" role="button" data-bs-toggle="dropdown" id="small-screen-dropdown">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+        <div class="dropdown-menu mt-1" id="dropdown">
+            <a href="{{ path('app_login') }}" class="dropdown-item">Log In</a>
+            <a href="{{ path('sign-up') }}" class="dropdown-item">Sign Up</a>
+        </div>
+    </div>
     {% endif %}
 </div>
 

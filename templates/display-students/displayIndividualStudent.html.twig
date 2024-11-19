@@ -39,9 +39,9 @@
                     <p><strong>Neurodiversity:</strong> {{ student.neurodiversity.neurodiversity ?? 'None' }}</p>
                     <br>
                     <div class="d-flex flex-row">
-                        <a href="{{ path('update_student', { id: student.id }) }}" class="text-decoration-none button-for-student-ud">Update</a>
                         {% if is_granted('ROLE_TEACHER') %}
-                        <a role="button" data-bs-toggle="modal" data-bs-target="#deleteModal" data-student-id="{{ student.id }}" class="text-decoration-none button-for-student-ud ms-4">Delete</a>
+                        <a href="{{ path('update_student', { id: student.id }) }}" class="text-decoration-none button-for-student-ud">Update</a>
+                            <a role="button" data-bs-toggle="modal" data-bs-target="#deleteModal" data-student-id="{{ student.id }}" class="text-decoration-none button-for-student-ud ms-4">Delete</a>
                         {% endif %}
                     </div>
                 </div>

@@ -12,7 +12,6 @@ body {
     background-color: #f6ebe6;
 }
 
-
 .title {
     border: 1px solid grey;
     width: 100%;
@@ -280,6 +279,10 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 #phoneRevenueChart {
     height: 100% !important;
     margin-left: -30px;
+}
+
+.card-body {
+    padding: 10px 30px;
 }
 
 /*SIGN UP FORM*/

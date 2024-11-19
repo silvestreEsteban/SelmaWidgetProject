@@ -4,7 +4,7 @@
 
 {% block body %}
     {% include '/_partials/_header.html.twig' %}
-    <div class="main-container w-100" style="height: 100vh;">
+    <div class="main-container w-100" style="height: 100%;">
         {# Desktop/Tablet View #}
         <div class="d-flex flex-wrap flex-row justify-content-between mx-auto d-md-flex d-none" style="width: 60%; gap: 1rem;">
             {% include '_partials/_myDashboardCard.html.twig' %}
@@ -31,5 +31,6 @@
         </div>
     </div>
 
+    {% include '/_partials/_footer.html.twig' %}
 
 {% endblock %}

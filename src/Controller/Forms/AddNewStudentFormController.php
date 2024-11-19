@@ -2,7 +2,6 @@
 
 namespace App\Controller\Forms;
 
-use App\Entity\Student;
 use App\Entity\StudentInfo;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,6 +14,8 @@ class AddNewStudentFormController extends AbstractController
     #[Route('/new-student', name: 'new_student')]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_TEACHER');
+
         $student = new StudentInfo();
 
         $form = $this->createForm(StudentType::class, $student);

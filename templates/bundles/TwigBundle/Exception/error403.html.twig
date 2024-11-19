@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block title %}Access Denied{% endblock %}
+
+{% block body %}
+{% include '/_partials/_header.html.twig' %}
+
+    <div class="main-container d-flex justify-content-center" style="height: 92vh;">
+        <div class="align-self-start">Sorry, you don't have access to view this page.</div>
+    </div>
+
+    {% include '/_partials/_footer.html.twig' %}
+{% endblock %}
