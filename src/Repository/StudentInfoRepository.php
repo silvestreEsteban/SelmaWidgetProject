@@ -40,4 +40,15 @@ class StudentInfoRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+    public function searchByName(string $term): array
+    {
+        return $this->createQueryBuilder('s')
+            ->where('LOWER(s.firstName) LIKE LOWER(:term)')
+            ->orWhere('LOWER(s.lastName) LIKE LOWER(:term)')
+            // Add other fields you want to search
+            ->setParameter('term', '%'.strtolower($term).'%')
+            ->setMaxResults(10) // Limit results
+            ->getQuery()
+            ->getResult();
+    }
 }

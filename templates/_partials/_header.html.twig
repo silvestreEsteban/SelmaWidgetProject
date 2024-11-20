@@ -126,7 +126,9 @@
                         <a href="#" class="list-group-item border-0">Compliance</a>
                         <hr class="my-2">
                         <a href="#" class="list-group-item border-0">System Users</a>
+                        {% if is_granted('ROLE_REGISTRAR') %}
                         <a href="{{ path('admin_users_list') }}" class="list-group-item border-0">Roles and Permissions</a>
+                        {% endif %}
                         <hr class="my-2">
                         <a href="#" class="list-group-item border-0">API</a>
                     </div>

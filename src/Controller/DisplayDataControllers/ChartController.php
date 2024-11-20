@@ -15,7 +15,6 @@ class ChartController extends AbstractController
     {
         $students = $studentInfoRepository->findAll();
         $annualRevenues = $annualRevenueRepository->findAll();
-
         $neurodiversities = [];
         $learningStyles = [];
         $paymentStatus = [];

@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User Management{% endblock %}
+
+{% block body %}
+    {% include '/_partials/_header.html.twig' %}
+    <div class="main-container">
+        <div class="container mt-4">
+            <h1>User Management</h1>
+
+            {% if app.flashes('success') is not empty %}
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Current Roles</th>
+                    <th>Update Role</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% if users %}
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ user.email }}</td>
+                            <td>
+                                {% for role in user.roles %}
+                                    <span class="badge bg-secondary me-1">{{ role }}</span>
+                                {% endfor %}
+                            </td>
+                            <td>
+                                <form action="{{ path('admin_update_user_role', {'id': user.id}) }}" method="POST">
+                                    <div class="input-group">
+                                        <select name="role" class="form-select">
+                                            <option value="">Select Role</option>
+                                            {% for role in available_roles %}
+                                                <option value="{{ role }}">{{ role }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="4" class="text-center">No users found</td>
+                    </tr>
+                {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% include '/_partials/_footer.html.twig' %}
+{% endblock %}
